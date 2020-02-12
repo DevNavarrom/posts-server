@@ -1,22 +1,20 @@
 const Router = require('express');
-const UsuarioModel = require("../models/usuario.model");
-
+const PostModel = require("../models/post.model");
 
 const rutas = Router();
 
 rutas.get('', function (req, res, next) {
-    UsuarioModel.obtenerUsuarios()
-        .then(usuarios => {
+    PostModel.obtenerPosts()
+        .then(posts => {
             res.json({
                 'estado': 'Ok',
-                'usuarios': usuarios
+                'posts': posts
             });
         })
         .catch(err => {
-            return res.status(500).send("Error obteniendo Usuarios... "+err);
+            return res.status(500).send("Error obteniendo Posts... "+err);
         });
 
 });
-
 
 module.exports = rutas;
