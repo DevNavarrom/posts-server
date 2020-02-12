@@ -24,12 +24,12 @@ rutas.post('', (req, res) => {
     UsuarioModel.insertarUsuario(req.body).then(res => {
         if (res) {
             res.json({
-                'estado': OK,
+                'estado': 'OK',
                 'mensaje': 'Usuario insertado'
             });
         } else {
             res.json({
-                'estado': ERROR,
+                'estado': 'ERROR',
                 'error': 'No se insertó el usuario'
             });
         }

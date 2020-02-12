@@ -66,12 +66,12 @@ rutas.post('/insertar', (req, res) => {
         if (res) {
 
             res.json({
-                'estado': OK,
+                'estado': 'OK',
                 'mensaje': 'Post insertado'
             });
         } else {
             res.json({
-                'estado': ERROR,
+                'estado': 'ERROR',
                 'error': 'No se insertó el Post'
             });
         }
